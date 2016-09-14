@@ -1,0 +1,52 @@
+<!-- Paper background image from Dioma on deviantart.com -->
+<!-- Dickie font from Dave Ellis from http://www.novolume.co.uk/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" media="(orientation: portrait)" href="mobile.css">
+</head>
+<body>
+	<div id="dialogueoverlay"></div>
+	<div id="dialoguebox">
+		<div id="gameStyle">
+			<p class='centered'>Choose a game style:</p>
+			<button class='bttn bttn-small' onclick='submit(true, true)'>PVP</button>
+			<button class='bttn bttn-small' onclick='submit(true, false)'>PVC</button>
+		</div>
+		<div id="symbol">
+			<p class="centered">Choose your symbol:</p>
+			<!--<small>X always goes first</small>-->
+			<button class='bttn bttn-large' onclick='submit(false, false)'><h1 class='x symbolFix'>X</h1></button>
+			<button class='bttn bttn-large' onclick='submit(false, true)'><h1 class='o symbolFix'>O</h1></button>
+		</div>
+	</div>
+	<main id="content">
+		<div class="title">
+			<h1>Tic Tac Toe</h1>
+			<p class="myname">By Magfurul Abeer</p>
+		</div>
+		<div id="score"></div>
+		<h2 id="display"></h2>	
+		<div class="vertical"></div>
+		<div class="horizontal"></div>
+		<div class="container" id="container">
+			<div class="box" id="1"></div>
+			<div class="box" id="2"></div>
+			<div class="box" id="3"></div>
+			<div class="box" id="4"></div>
+			<div class="box" id="5"></div>
+			<div class="box" id="6"></div>
+			<div class="box" id="7"></div>
+			<div class="box" id="8"></div>
+			<div class="box" id="9"></div>
+		</div>
+	</main>	
+	<div class="scrollfix"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>	
+	<script src="game.js"></script>
+</body>
+</html>
