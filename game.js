@@ -140,9 +140,8 @@ var Game = function() {
 
 	// Computer Logic for move decisions.
 	function computerTurn() {
-		
 		if(!gameover) {
-			if(currentPlayer.symbol || changeTactics) {
+			if(currentPlayer.symbol || !changeTactics) {
 				switch(currentPlayer.turns()) {
 					case 0:
 					case 1:
@@ -155,6 +154,7 @@ var Game = function() {
 							tacticalMove(corners);
 						}
 				}
+				changeTactics = true
 			} else {
 				if(interceptionNecessary()) {
 					intercept();
@@ -171,11 +171,14 @@ var Game = function() {
 	function tacticalMove(tactics) {
 		for(var i in tactics) {
 			var tactic = ("#"+tactics[i]);
+			console.log(tactics[i]);
 			var valid = computerMove(tactic);
 			if(valid) {
+				console.log("true");
 				return true;
 			}
 		}
+		console.log("false")
 		return false;
 		
 	}
